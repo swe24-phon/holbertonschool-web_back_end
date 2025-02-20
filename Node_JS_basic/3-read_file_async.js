@@ -16,14 +16,15 @@ async function countStudents(path) {
       fields[field[3]].push(field[0]);
     });
     i = 1
+    groups = []
     for (const field in fields) {
       if (fields[field].length > 0) {
-         student[i]= (`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+         groups[i]= (`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
          i++;
       }
     }    
     //return output.join('\n');
-    output.push(total, student[1], student[2]);
+    output.push(total, groups[1], groups[2]);
     return output.join('\n');
   } catch (error) {
     throw new Error('Cannot load the database');
