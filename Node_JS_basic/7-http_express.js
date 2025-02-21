@@ -17,7 +17,7 @@ app.get('/students', async (req, res) => {
     }
     res.send(response);
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).send(`This is the list of our students\n${error.message}`);
   }
 });
 
