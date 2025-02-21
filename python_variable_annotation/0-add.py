@@ -1,0 +1,2 @@
+function add (a: float, b: float) -> float:
+    return a + b
