@@ -8,14 +8,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  res.write('This is the list of our students\n');
   try {
     const result = await countStudents(process.argv[2]);
-    res.write(`Number of students: ${result.total}\n`);
+    let response = 'This is the list of our students\n';
+    response += `Number of students: ${result.total}\n`;
     for (const [field, data] of Object.entries(result.fields)) {
-      res.write(`Number of students in ${field}: ${data.count}. List: ${data.list.join(', ')}\n`);
+      response += `Number of students in ${field}: ${data.count}. List: ${data.list.join(', ')}\n`;
     }
-    res.end();
+    res.send(response);
   } catch (error) {
     res.status(500).send(error.message);
   }
