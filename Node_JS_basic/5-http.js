@@ -3,10 +3,11 @@ const { readFileSync } = require('fs');
 const { countStudents } = require('./3-read_file_async');
 const app = http.createServer((req, res) => {
   res.write(req.url)
-  If (req.url === '/') {
-    res.end('Hello Holberton School!');
+  if (req.url === '/') {
+    res.write('Hello Holberton School!');
+    res.end();
   }
-  else (req.url === '/students') {
+  else if (req.url === '/students') {
     res.end('This is the list of our students\n');
     countStudents(process.argv[2])
       .then(({ students, studentsByCS, studentsBySWE }) => {
