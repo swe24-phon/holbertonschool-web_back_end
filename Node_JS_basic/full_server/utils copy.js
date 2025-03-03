@@ -1,4 +1,3 @@
-import fs from 'fs';
 const readDatabase = async (path) => {
 //   try {
 //     const data = await  require(path)
@@ -7,7 +6,7 @@ const readDatabase = async (path) => {
 //     throw new Error('Cannot load the database');
 //   }
 // };
-
+import fs from 'fs';
           
 function readDatabase(filePath) {
     return new Promise((resolve, reject) => {
