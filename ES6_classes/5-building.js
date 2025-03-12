@@ -9,7 +9,6 @@ export default class Building {
     }
   }
 
-  //abstract method
   evacuationWarningMessage() {
     throw new Error(
       'Class extending Building must override evacuationWarningMessage',
