@@ -1,4 +1,4 @@
-class Building {
+export default class Building {
   constructor(sqft) {
     if (typeof sqft !== 'number') {
       throw TypeError('Square footage must be a number');
