@@ -1,9 +1,12 @@
 import getListStudents from './0-get_list_students';
 
-test('getListStudents is implemented correctly', () => {
-  expect(getListStudents()).toEqual([
-    { firstName: 'Guillaume', id: 1, location: 'San Francisco' },
-    { firstName: 'James', id: 2, location: 'Columbia' },
-    { firstName: 'Serena', id: 5, location: 'San Francisco' },
-  ]);
+describe('getListStudents', () => {
+  it('is implemented correctly', () => {
+    expect.assertions(1);
+    expect(getListStudents()).toStrictEqual([
+      { firstName: 'Guillaume', id: 1, location: 'San Francisco' },
+      { firstName: 'James', id: 2, location: 'Columbia' },
+      { firstName: 'Serena', id: 5, location: 'San Francisco' },
+    ]);
+  });
 });
