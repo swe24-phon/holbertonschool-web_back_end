@@ -1,5 +1,16 @@
 function getStudentsByLocation(students, location) {
-  return [students.filter((student) => student.location === location)];
+  if (!Array.isArray(students)) {
+    return [];
+  }
+  if (typeof location !== 'string') {
+    return [];
+  }
+  if (students.length === 0) {
+    return [];
+  }
+
+  loc = students.filter((student) => student.location === location);
+  return [...loc];
 }
 
 export default getStudentsByLocation;
