@@ -12,7 +12,7 @@ export default class Car {
 
     this._brand = brand;
     this._motor = motor;
-    this._color -= color;
+    this._color = color;
   }
 
   cloneCar() {
