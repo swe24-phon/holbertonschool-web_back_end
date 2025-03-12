@@ -24,12 +24,21 @@ export default class HolbertonCourse {
     return this._name;
   }
   set name(newName) {
+    if (typeof newName !== 'string') {
+      throw TypeError('Name must be a string');
+    }
     this._name = newName;
   }
   get length() {
     return this._length;
   }
   set length(newLength) {
+    if (typeof newLength !== 'number') {
+      throw TypeError('Length must be a number');
+    }
+    if (newLength <= 0) {
+      throw RangeError('Length must be greater than 0');
+    }
     this._length = newLength;
   }
   get students() {
