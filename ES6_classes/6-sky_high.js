@@ -4,8 +4,8 @@ export default class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
     super(sqft);
     if (
-      this.constructor !== SkyHighBuilding &&
-      !this.evacuationWarningMessage
+      this.constructor !== SkyHighBuilding
+      && !this.evacuationWarningMessage
     ) {
       throw new Error(
         'Class extending Building must override evacuationWarningMessage',
