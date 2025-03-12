@@ -9,7 +9,7 @@ function getStudentsByLocation(students, location) {
     return [];
   }
 
-  loc = students.filter((student) => student.location === location);
+  let loc = students.filter((student) => student.location === location);
   return [...loc];
 }
 
