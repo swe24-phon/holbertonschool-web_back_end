@@ -4,6 +4,7 @@ export default class Building {
       throw TypeError('Square footage must be a number');
     }
     this._sqft = sqft;
+    this.evacuationWarningMessage();
   }
 
   //abstract method
