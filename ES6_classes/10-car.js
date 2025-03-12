@@ -21,10 +21,6 @@ export default class Car {
     //   String(this._motor),
     //   String(this._color),
     // );
-    return new this.constructor(
-      String(this._brand),
-      String(this._motor),
-      String(this._color),
-    );
+    return new this.constructor();
   }
 }
