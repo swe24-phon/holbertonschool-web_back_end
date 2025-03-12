@@ -1,5 +1,21 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
+    if (typeof name !== 'string') {
+      throw TypeError('Name must be a string');
+    }
+    if (typeof length !== 'number') {
+      throw TypeError('Length must be a number');
+    }
+    if (typeof students !== 'number') {
+      throw TypeError('Students must be a number');
+    }
+    if (students < 0) {
+      throw RangeError('Students must be greater than or equal to 0');
+    }
+    if (length <= 0) {
+      throw RangeError('Length must be greater than 0');
+    }
+
     this._name = name;
     this._length = length;
     this._students = students;
