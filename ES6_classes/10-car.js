@@ -21,6 +21,6 @@ export default class Car {
     //   String(this._motor),
     //   String(this._color),
     // );
-    return new this.constructor();
+    return new this.constructor[Symbol.species]();
   }
 }
