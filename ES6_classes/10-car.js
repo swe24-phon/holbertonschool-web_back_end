@@ -16,7 +16,12 @@ export default class Car {
   }
 
   cloneCar() {
-    return new Car(
+    // return new Car(
+    //   String(this._brand),
+    //   String(this._motor),
+    //   String(this._color),
+    // );
+    return new this.constructor(
       String(this._brand),
       String(this._motor),
       String(this._color),
