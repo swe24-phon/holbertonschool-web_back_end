@@ -1,5 +1,3 @@
-import { Student } from './0-get_list_students';
-
 export default function updateStudentGradeByCity(students, city, newGrades) {
   if (!Array.isArray(students)) {
     return [];
