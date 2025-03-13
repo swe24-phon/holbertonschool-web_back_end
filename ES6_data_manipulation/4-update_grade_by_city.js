@@ -23,11 +23,11 @@ export default function updateStudentGradeByCity(
     grades[grade.studentId] = grade.grade;
   });
   const students = getListStudents();
-  const updatedStudents = students.map((student) => {
-    if (student.city === city) {
-      return { ...student, grade: grades[student.id] };
-    }
-    return student;
-  });
-  return updatedStudents;
+  const cityStudents = students.filter((student) => student.city === city);
+  const updatedCityStudents = cityStudents.map((student) => ({
+    ...student,
+    grade: grades[student.id] || student.grade,
+  }));
+  const remainingStudents = students.filter((student) => student.city !== city);
+  return [...remainingStudents, ...updatedCityStudents];
 }
