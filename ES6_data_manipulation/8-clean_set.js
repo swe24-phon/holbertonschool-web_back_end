@@ -3,7 +3,7 @@ export default function cleanSet(sett, startString) {
     throw new Error('Input is not a set');
   }
   if (typeof startString !== 'string') {
-    throw new Error('Start string is not a string');
+    return '';
   }
   const cleanedSet = new Set();
   sett.forEach((item) => {
