@@ -8,8 +8,8 @@ export default function cleanSet(sett, startString) {
   const cleanedSet = new Set();
   sett.forEach((item) => {
     if (typeof item === 'string' && item.startsWith(startString)) {
-      cleanedSet.add(`${item}` + '-');
+      cleanedSet.add(item.slice(startString.length));
     }
   });
-  return cleanedSet;
+  return Array.from(cleanedSet).join('-');
 }
