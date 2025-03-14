@@ -1,6 +1,6 @@
 export default function hasArrayValues(sett, arr) {
-  if (!Array.isArray(arr) || !Array.isArray(sett)) {
+  if (!Array.isArray(arr) || !(sett instanceof Set)) {
     throw new Error('Input is not an array');
   }
-  return sett.some((item) => arr.includes(item));
+  return arr.every((item) => sett.has(item));
 }
