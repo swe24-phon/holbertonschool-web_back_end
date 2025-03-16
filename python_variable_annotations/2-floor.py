@@ -3,6 +3,6 @@
 returns their sum as a float'''
 import math
 
-def floor(n: float) -> float:
+def floor(n: float) -> int:
     '''returns the sum of a and b'''
     return math.floor(n)
